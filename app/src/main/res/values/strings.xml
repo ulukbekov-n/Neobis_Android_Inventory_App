@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Neobis_Android_Inventory_App</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="the_archive">the Archive</string>
+</resources>
