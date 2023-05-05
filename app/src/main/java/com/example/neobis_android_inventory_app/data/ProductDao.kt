@@ -2,8 +2,6 @@ package com.example.neobis_android_inventory_app.data
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import kotlinx.coroutines.flow.Flow
-import com.example.neobis_android_inventory_app.data.Product
 
 @Dao
 

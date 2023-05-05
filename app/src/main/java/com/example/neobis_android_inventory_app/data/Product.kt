@@ -1,9 +1,16 @@
 package com.example.neobis_android_inventory_app.data
 
+import Converters
 import android.graphics.Bitmap
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import androidx.room.TypeConverter
+import androidx.room.TypeConverters
+import com.example.neobis_android_inventory_app.data.Converters;
+
+
 @Entity(tableName = "product_table")
+@TypeConverters(Converters::class)
 data class Product(
 
     @PrimaryKey(autoGenerate =true)
@@ -16,6 +23,8 @@ data class Product(
     val Cost: String,
     val companyName: String,
     val Quantity: String,
+    val image: Bitmap
+
 //    val productPhoto: Bitmap
 
 

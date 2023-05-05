@@ -9,6 +9,7 @@
     android:layout_marginLeft="16dp"
     android:layout_marginTop="152dp">
 
+
        <ImageView
            android:id="@+id/dots"
            android:layout_width="wrap_content"
@@ -27,8 +28,8 @@
            app:layout_constraintTop_toTopOf="parent"
            app:layout_constraintLeft_toLeftOf="parent"
            android:layout_marginTop="45dp"
-           android:src="@drawable/apps"
-           />
+           android:src="@drawable/ic_photo" />
+
 
        <TextView
            android:id="@+id/nameModel"

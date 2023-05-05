@@ -1,10 +1,12 @@
-package com.example.neobis_android_inventory_app.fragments
+package com.example.neobis_android_inventory_app.fragments.Home
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.neobis_android_inventory_app.R
 import com.example.neobis_android_inventory_app.data.Product
 
@@ -14,9 +16,10 @@ class HomeAdapter: RecyclerView.Adapter<HomeAdapter.MyViewHolder>() {
     class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
         val modelName: TextView = itemView.findViewById(R.id.nameModel)
-        val Cost: TextView = itemView.findViewById(R.id.modelCost)
+        val modelCost: TextView = itemView.findViewById(R.id.modelCost)
         val companyName: TextView = itemView.findViewById(R.id.nameCompany)
         val quantity: TextView = itemView.findViewById(R.id.modelQuantity)
+        val modelImage: View? =itemView.findViewById(R.id.productImage)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -30,9 +33,15 @@ class HomeAdapter: RecyclerView.Adapter<HomeAdapter.MyViewHolder>() {
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = productList[position]
         holder.modelName.text=currentItem.modelName
-        holder.Cost.text=currentItem.Cost
+        holder.modelCost.text=currentItem.Cost
         holder.companyName.text=currentItem.companyName
         holder.quantity.text=currentItem.Quantity
+        Glide.with(holder.itemView.context)
+            .asBitmap()
+            .load(currentItem.image)
+            .into(holder.modelImage as ImageView)
+
+
     }
     fun setData(product:List<Product>){
         this.productList =product

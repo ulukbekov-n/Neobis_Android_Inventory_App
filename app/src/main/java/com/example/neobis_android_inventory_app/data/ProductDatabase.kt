@@ -1,7 +1,11 @@
 package com.example.neobis_android_inventory_app.data
 
+import Converters
 import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import androidx.room.*
+import java.io.ByteArrayOutputStream
 
 @Database(
     entities = [Product::class],
@@ -14,7 +18,7 @@ abstract class ProductDatabase: RoomDatabase() {
 
     companion object{
         @Volatile
-        private var INSTANCE: ProductDatabase? = null
+            private var INSTANCE: ProductDatabase? = null
 
         fun getDatabase(context: Context): ProductDatabase {
             val tempInstance= INSTANCE
@@ -32,5 +36,25 @@ abstract class ProductDatabase: RoomDatabase() {
             }
         }
     }
-//    TypeConvert
+        // ...
+
+        @TypeConverter
+        fun fromBitmap(bitmap: Bitmap?): ByteArray? {
+            if (bitmap == null) {
+                return null
+            }
+            val outputStream = ByteArrayOutputStream()
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream)
+            return outputStream.toByteArray()
+        }
+
+        @TypeConverter
+        fun toBitmap(bytes: ByteArray?): Bitmap? {
+            if (bytes == null) {
+                return null
+            }
+            return BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
+        }
+
+
 }

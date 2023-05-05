@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 class ProductViewModel (application: Application):AndroidViewModel(application)
 {
 
-     val readAllData:LiveData<List<Product>>
+    val readAllData:LiveData<List<Product>>
     private val repository: ProductRepository
 
     init{

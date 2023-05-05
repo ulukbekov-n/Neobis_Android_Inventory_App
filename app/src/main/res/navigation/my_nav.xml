@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.neobis_android_inventory_app.fragments.HomeFragment"
+        android:name="com.example.neobis_android_inventory_app.fragments.Home.HomeFragment"
         android:label="Главное"
         tools:layout="@layout/fragment_home" >
         <action
@@ -16,11 +16,16 @@
     </fragment>
     <fragment
         android:id="@+id/addFragment"
-        android:name="com.example.neobis_android_inventory_app.fragments.addFragment"
+        android:name="com.example.neobis_android_inventory_app.fragments.AddFragment"
         android:label="Добавить Товар"
         tools:layout="@layout/fragment_add" >
         <action
             android:id="@+id/action_addFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/archiveFragment"
+        android:name="com.example.neobis_android_inventory_app.fragments.ArchiveFragment"
+        android:label="Архив"
+        tools:layout="@layout/fragment_archive" />
 </navigation>

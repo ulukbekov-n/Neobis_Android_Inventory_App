@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/home"
+        android:id="@+id/homeFragment"
         android:icon="@drawable/apps"
         android:title="Главное"/>
     <item
-        android:id="@+id/archive"
+        android:id="@+id/archiveFragment"
         android:icon="@drawable/archive"
         android:title="Архив"/>
 

@@ -2,40 +2,38 @@ package com.example.neobis_android_inventory_app
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.neobis_android_inventory_app.databinding.ActivityMainBinding
-import com.example.neobis_android_inventory_app.fragments.ArchiveFragment
-import com.example.neobis_android_inventory_app.fragments.HomeFragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private lateinit var bottomNavigationView: BottomNavigationView
+    private lateinit var navController: NavController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setupActionBarWithNavController(findNavController(R.id.fragment))
 
-        binding.bottomNav.setOnItemSelectedListener {
-            when(it.itemId){
-                R.id.home->replaceFragment(HomeFragment())
-
-                R.id.archive->replaceFragment(ArchiveFragment())
-                else->{
-
-                }
-
-            }
-            true
-        }
+        bottomNavigationView = binding.bottomNav
+        navController = findNavController(R.id.fragmentNavController)
+        bottomNavigationView.setupWithNavController(navController)
+        setupActionBarWithNavController(findNavController(R.id.fragmentNavController))
     }
-    private fun replaceFragment(fragment: Fragment) {
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction =fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.fragment,fragment)
-        fragmentTransaction.commit()
+
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.fragmentNavController)
+        return navController.navigateUp()||super.onSupportNavigateUp()
     }
+
+
+
+
 }
+
 
