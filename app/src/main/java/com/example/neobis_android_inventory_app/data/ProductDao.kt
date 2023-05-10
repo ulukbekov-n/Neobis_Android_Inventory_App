@@ -2,6 +2,7 @@ package com.example.neobis_android_inventory_app.data
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.example.neobis_android_inventory_app.model.Product
 
 @Dao
 

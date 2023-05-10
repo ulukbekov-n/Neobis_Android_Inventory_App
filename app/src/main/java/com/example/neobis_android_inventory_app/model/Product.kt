@@ -1,19 +1,22 @@
-package com.example.neobis_android_inventory_app.data
+package com.example.neobis_android_inventory_app.model
 
-import Converters
 import android.graphics.Bitmap
+import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import androidx.room.TypeConverter
 import androidx.room.TypeConverters
-import com.example.neobis_android_inventory_app.data.Converters;
 
+import com.example.neobis_android_inventory_app.data.TypeConverter
+import kotlinx.android.parcel.Parcelize
 
+//import androidx.room.TypeConverter
+
+@Parcelize
 @Entity(tableName = "product_table")
-@TypeConverters(Converters::class)
+@TypeConverters(TypeConverter::class)
 data class Product(
 
-    @PrimaryKey(autoGenerate =true)
+    @PrimaryKey(autoGenerate = true)
     val id: Int,
 //  val image Bitmap
 //  typeConverter
@@ -23,10 +26,7 @@ data class Product(
     val Cost: String,
     val companyName: String,
     val Quantity: String,
-    val image: Bitmap
-
-//    val productPhoto: Bitmap
-
+    val image: String
+) : Parcelable
 
 
-)

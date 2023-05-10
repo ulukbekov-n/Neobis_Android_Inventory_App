@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_homeFragment_to_addFragment"
             app:destination="@id/addFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_updateFragment"
+            app:destination="@id/updateFragment" />
     </fragment>
     <fragment
         android:id="@+id/addFragment"
@@ -28,4 +31,16 @@
         android:name="com.example.neobis_android_inventory_app.fragments.ArchiveFragment"
         android:label="Архив"
         tools:layout="@layout/fragment_archive" />
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="com.example.neobis_android_inventory_app.fragments.update.UpdateFragment"
+        android:label="fragment_update"
+        tools:layout="@layout/fragment_update" >
+        <action
+            android:id="@+id/action_updateFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="currentProduct"
+            app:argType="com.example.neobis_android_inventory_app.model.Product" />
+    </fragment>
 </navigation>

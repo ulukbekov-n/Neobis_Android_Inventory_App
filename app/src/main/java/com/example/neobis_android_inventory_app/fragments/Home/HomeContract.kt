@@ -1,6 +1,6 @@
 package com.example.neobis_android_inventory_app.fragments.Home
 
-import com.example.neobis_android_inventory_app.data.Product
+import com.example.neobis_android_inventory_app.model.Product
 
 interface HomeContract {
 

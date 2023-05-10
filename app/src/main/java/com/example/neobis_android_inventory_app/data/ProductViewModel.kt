@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import com.example.neobis_android_inventory_app.model.Product
 import kotlinx.coroutines.Dispatchers
 
 import kotlinx.coroutines.launch

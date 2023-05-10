@@ -8,7 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.neobis_android_inventory_app.R
-import com.example.neobis_android_inventory_app.data.Product
+import com.example.neobis_android_inventory_app.model.Product
+import com.example.neobis_android_inventory_app.databinding.CustomerCardsBinding
+import com.example.neobis_android_inventory_app.databinding.FragmentHomeBinding
 
 class HomeAdapter: RecyclerView.Adapter<HomeAdapter.MyViewHolder>() {
 
@@ -19,11 +21,14 @@ class HomeAdapter: RecyclerView.Adapter<HomeAdapter.MyViewHolder>() {
         val modelCost: TextView = itemView.findViewById(R.id.modelCost)
         val companyName: TextView = itemView.findViewById(R.id.nameCompany)
         val quantity: TextView = itemView.findViewById(R.id.modelQuantity)
-        val modelImage: View? =itemView.findViewById(R.id.productImage)
+        val imageView: View = itemView.findViewById(R.id.productImage)
+
+        val cardItem:View = itemView.findViewById(R.id.cardItem)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.customer_cards,parent,false))
+
     }
 
     override fun getItemCount(): Int {
@@ -36,10 +41,14 @@ class HomeAdapter: RecyclerView.Adapter<HomeAdapter.MyViewHolder>() {
         holder.modelCost.text=currentItem.Cost
         holder.companyName.text=currentItem.companyName
         holder.quantity.text=currentItem.Quantity
+
+
         Glide.with(holder.itemView.context)
             .asBitmap()
             .load(currentItem.image)
-            .into(holder.modelImage as ImageView)
+            .into(holder.imageView as ImageView)
+
+
 
 
     }
@@ -47,4 +56,5 @@ class HomeAdapter: RecyclerView.Adapter<HomeAdapter.MyViewHolder>() {
         this.productList =product
         notifyDataSetChanged()
     }
+
 }
