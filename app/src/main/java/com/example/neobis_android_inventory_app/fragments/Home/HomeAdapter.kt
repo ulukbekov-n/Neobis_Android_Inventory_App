@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.neobis_android_inventory_app.R
@@ -41,12 +42,15 @@ class HomeAdapter: RecyclerView.Adapter<HomeAdapter.MyViewHolder>() {
         holder.modelCost.text=currentItem.Cost
         holder.companyName.text=currentItem.companyName
         holder.quantity.text=currentItem.Quantity
+        holder.itemView.setOnClickListener{
+            val action = HomeFragmentDirections.actionHomeFragmentToUpdateFragment(currentItem)
+            holder.itemView.findNavController().navigate(action)
+        }
 
-
-        Glide.with(holder.itemView.context)
-            .asBitmap()
-            .load(currentItem.image)
-            .into(holder.imageView as ImageView)
+//        Glide.with(holder.itemView.context)
+//            .asBitmap()
+//            .load(currentItem.image)
+//            .into(holder.imageView as ImageView)
 
 
 

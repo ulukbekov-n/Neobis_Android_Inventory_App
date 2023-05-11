@@ -3,6 +3,12 @@ pluginManagement {
         google()
         mavenCentral()
         gradlePluginPortal()
+        maven {
+            url 'https://dl.google.com/dl/android/maven2'
+        }
+        jcenter()
+
+
     }
 }
 dependencyResolutionManagement {
@@ -10,6 +16,10 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven {
+            url 'https://dl.google.com/dl/android/maven2'
+        }
+        jcenter()
     }
 }
 rootProject.name = "Neobis_Android_Inventory_App"

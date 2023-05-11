@@ -7,31 +7,31 @@ import androidx.room.*
 import androidx.room.TypeConverter
 import com.example.neobis_android_inventory_app.model.Product
 import java.io.ByteArrayOutputStream
-
-@TypeConverter
-fun fromByteArray(bytes: ByteArray?): Bitmap? {
-    return if (bytes == null) {
-        null
-    } else {
-        BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
-    }
-}
-
-@TypeConverter
-fun toByteArray(bitmap: Bitmap?): ByteArray? {
-    return if (bitmap == null) {
-        null
-    } else {
-        val stream = ByteArrayOutputStream()
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
-        stream.toByteArray()
-    }
-}
+//
+//@TypeConverter
+//fun fromByteArray(bytes: ByteArray?): Bitmap? {
+//    return if (bytes == null) {
+//        null
+//    } else {
+//        BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
+//    }
+//}
+//
+//@TypeConverter
+//fun toByteArray(bitmap: Bitmap?): ByteArray? {
+//    return if (bitmap == null) {
+//        null
+//    } else {
+//        val stream = ByteArrayOutputStream()
+//        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
+//        stream.toByteArray()
+//    }
+//}
 
 @Database(
     entities = [Product::class], version = 1
 )
-@TypeConverters(TypeConverter::class)
+//@TypeConverters(TypeConverter::class)
 
 abstract class ProductDatabase : RoomDatabase() {
     abstract fun productDao(): ProductDao

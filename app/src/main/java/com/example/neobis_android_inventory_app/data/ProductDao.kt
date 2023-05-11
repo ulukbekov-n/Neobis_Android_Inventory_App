@@ -27,6 +27,9 @@ interface ProductDao {
     @Query("SELECT * FROM product_table ORDER BY Quantity ASC")
     fun getProductsOrderedByQuantity(): LiveData<List<Product>>
 
+    @Update
+    suspend fun updateProduct(product: Product)
+
 
 
 }

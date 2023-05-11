@@ -26,7 +26,7 @@ data class Product(
     val Cost: String,
     val companyName: String,
     val Quantity: String,
-    val image: String
+//    val image: String
 ) : Parcelable
 
 

@@ -66,6 +66,7 @@ class AddFragment : Fragment() {
 
     var selectedImageUri: Uri? = null
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 0 && resultCode == Activity.RESULT_OK && data != null && data.data != null) {
@@ -82,7 +83,7 @@ class AddFragment : Fragment() {
         val quantity = binding.addQuantity.text.toString()
         val image = selectedImageUri.toString()
         if (inputCheck(modelName, cost, companyName, quantity)) {
-            val product = Product(0, modelName, cost, companyName, quantity, image)
+            val product = Product(0, modelName, cost, companyName, quantity)
             mViewModel.addProduct(product)
 
             Toast.makeText(requireContext(), "Товар добавлен", Toast.LENGTH_LONG).show()
