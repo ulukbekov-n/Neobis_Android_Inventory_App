@@ -4,8 +4,7 @@ import android.graphics.BitmapFactory
 import androidx.room.TypeConverter
 import java.io.ByteArrayOutputStream
 
-class TypeConverter {
-    @TypeConverter
+class ImageConverter {
     fun fromByteArray(bytes: ByteArray?): Bitmap? {
         return if (bytes == null) {
             null

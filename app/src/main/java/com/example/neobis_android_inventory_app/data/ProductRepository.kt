@@ -13,4 +13,7 @@ class ProductRepository(private val productDao: ProductDao) {
     suspend fun updateProduct(product: Product){
         productDao.updateProduct(product)
     }
+    fun searchProducts(query: String): LiveData<List<Product>> {
+        return productDao.searchProducts("%$query%")
+    }
 }

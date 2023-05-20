@@ -19,6 +19,8 @@
         android:focusable="true"
         android:onClick="onChooseImageClick" />
 
+
+
     <EditText
         android:id="@+id/addModelName"
         android:layout_width="328dp"
@@ -30,10 +32,14 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="Впишите название товара"
+
         android:textColorHint="#C7CBCB"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="107dp" />
+        tools:layout_editor_absoluteY="107dp"
+        android:background="@drawable/roundedback"
+        android:paddingStart="25dp"/>
+
 
     <EditText
         android:id="@+id/addCost"
@@ -49,7 +55,9 @@
         android:textColorHint="#C7CBCB"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="194dp" />
+        tools:layout_editor_absoluteY="194dp"
+        android:background="@drawable/roundedback"
+        android:paddingStart="25dp"/>
 
     <EditText
         android:id="@+id/addCompanyName"
@@ -65,7 +73,9 @@
         android:textColorHint="#C7CBCB"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="283dp" />
+        tools:layout_editor_absoluteY="283dp"
+        android:background="@drawable/roundedback"
+        android:paddingStart="25dp"/>
 
     <EditText
         android:id="@+id/addQuantity"
@@ -81,7 +91,9 @@
         android:textColorHint="#C7CBCB"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="361dp" />
+        tools:layout_editor_absoluteY="361dp"
+        android:background="@drawable/roundedback"
+        android:paddingStart="25dp"/>
 
     <Button
         android:id="@+id/addButton"

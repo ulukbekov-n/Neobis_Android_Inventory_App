@@ -82,8 +82,9 @@ class AddFragment : Fragment() {
         val companyName = binding.addCompanyName.text.toString()
         val quantity = binding.addQuantity.text.toString()
         val image = selectedImageUri.toString()
+
         if (inputCheck(modelName, cost, companyName, quantity)) {
-            val product = Product(0, modelName, cost, companyName, quantity)
+            val product = Product(0, modelName, cost, companyName, quantity,image)
             mViewModel.addProduct(product)
 
             Toast.makeText(requireContext(), "Товар добавлен", Toast.LENGTH_LONG).show()

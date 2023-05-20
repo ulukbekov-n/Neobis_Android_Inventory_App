@@ -1,13 +1,9 @@
 package com.example.neobis_android_inventory_app.data
 
 import android.content.Context
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import androidx.room.*
-import androidx.room.TypeConverter
 import com.example.neobis_android_inventory_app.model.Product
-import java.io.ByteArrayOutputStream
-//
+
 //@TypeConverter
 //fun fromByteArray(bytes: ByteArray?): Bitmap? {
 //    return if (bytes == null) {
@@ -29,9 +25,9 @@ import java.io.ByteArrayOutputStream
 //}
 
 @Database(
-    entities = [Product::class], version = 1
+    entities = [Product::class], version = 2
 )
-//@TypeConverters(TypeConverter::class)
+@TypeConverters(ImageConverter::class)
 
 abstract class ProductDatabase : RoomDatabase() {
     abstract fun productDao(): ProductDao

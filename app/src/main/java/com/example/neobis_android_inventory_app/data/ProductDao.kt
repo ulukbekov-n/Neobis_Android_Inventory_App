@@ -30,6 +30,9 @@ interface ProductDao {
     @Update
     suspend fun updateProduct(product: Product)
 
+    @Query("SELECT * FROM product_table WHERE modelName LIKE :query OR companyName LIKE :query")
+    fun searchProducts(query: String): LiveData<List<Product>>
+
 
 
 }

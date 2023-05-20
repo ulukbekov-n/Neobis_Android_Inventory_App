@@ -1,7 +1,11 @@
 package com.example.neobis_android_inventory_app.fragments.update
 
+import android.app.Activity
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +14,7 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
 import com.example.neobis_android_inventory_app.R
 import com.example.neobis_android_inventory_app.data.ProductViewModel
 import com.example.neobis_android_inventory_app.databinding.FragmentUpdateBinding
@@ -43,16 +48,33 @@ class UpdateFragment : Fragment() {
         binding.cancelButton.setOnClickListener{
             findNavController().navigateUp()
         }
+        binding.updateProductImage.setOnClickListener() {
+            Log.d("AddFragment", "Try to show image")
+            val intent = Intent(Intent.ACTION_PICK)
+            intent.type = "image/*"
+            startActivityForResult(intent, 0)
+        }
         return binding.root
+    }
+    var selectedImageUri: Uri? = null
+
+    @Deprecated("Deprecated in Java")
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 0 && resultCode == Activity.RESULT_OK && data != null && data.data != null) {
+            selectedImageUri = data.data
+            Glide.with(this).load(selectedImageUri).into(binding.updateProductImage)
+        }
     }
     private fun updateItem(){
         val modelName= binding.updateModelName.text.toString()
         val Cost = binding.updateCost.text.toString()
         val companyName = binding.updateCompanyName.text.toString()
         val Quantity = binding.updateQuantity.text.toString()
+        val Image = selectedImageUri.toString()
 
         if (inputCheck(modelName,Cost,companyName, Quantity)){
-            val updatedProduct=Product(args.currentProduct.id, modelName,Cost,companyName,Quantity)
+            val updatedProduct=Product(args.currentProduct.id, modelName,Cost,companyName,Quantity, Image )
 
             mViewModel.updateProduct(updatedProduct)
             Toast.makeText(requireContext(),"Товар Сохранён",Toast.LENGTH_SHORT).show()

@@ -31,5 +31,8 @@ class ProductViewModel (application: Application):AndroidViewModel(application)
             repository.updateProduct(product)
         }
     }
+    fun searchProducts(query: String): LiveData<List<Product>> {
+        return repository.searchProducts(query)
+    }
 
 }

@@ -24,7 +24,10 @@ class MainActivity : AppCompatActivity() {
         navController = findNavController(R.id.fragmentNavController)
         bottomNavigationView.setupWithNavController(navController)
         setupActionBarWithNavController(findNavController(R.id.fragmentNavController))
+
+
     }
+
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.fragmentNavController)
