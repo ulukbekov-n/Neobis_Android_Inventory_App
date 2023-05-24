@@ -5,7 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.update.UpdateFragment">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Детали о товаре"
+        android:textColor="#003C68"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="24dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
 
+        />
     <ImageView
         android:id="@+id/updateProductImage"
         android:layout_width="160dp"
@@ -17,6 +28,7 @@
         android:src="@drawable/ic_photo"
         android:clickable="true"
         android:focusable="true"
+    tools:layout_editor_absoluteY="107dp"
         android:onClick="onChooseImageClick" />
 
     <EditText
@@ -33,7 +45,8 @@
         android:textColorHint="#C7CBCB"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="107dp" />
+        android:background="@drawable/roundedback"
+        android:paddingStart="25dp"/>
 
     <EditText
         android:id="@+id/updateCost"
@@ -49,7 +62,9 @@
         android:textColorHint="#C7CBCB"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="194dp" />
+        tools:layout_editor_absoluteY="194dp"
+        android:background="@drawable/roundedback"
+        android:paddingStart="25dp" />
 
     <EditText
         android:id="@+id/updateCompanyName"
@@ -65,7 +80,9 @@
         android:textColorHint="#C7CBCB"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="283dp" />
+        tools:layout_editor_absoluteY="283dp"
+        android:background="@drawable/roundedback"
+        android:paddingStart="25dp" />
 
     <EditText
         android:id="@+id/updateQuantity"
@@ -81,7 +98,9 @@
         android:textColorHint="#C7CBCB"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="361dp" />
+        tools:layout_editor_absoluteY="361dp"
+        android:background="@drawable/roundedback"
+        android:paddingStart="25dp"/>
 
     <Button
         android:id="@+id/updateButton"

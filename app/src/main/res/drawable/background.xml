@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="#FFFFFF" /> <!-- Background color -->
-    <corners android:topLeftRadius="20dp" android:topRightRadius="20dp" /> <!-- Rounded corners -->
-    <padding android:left="12dp" android:top="12dp" android:right="12dp" android:bottom="12dp" /> <!-- Padding -->
-    <gradient android:angle="45" android:startColor="#FFFFFF" android:endColor="#ECECEC" /> <!-- Gradient color -->
-</shape>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="10dp"
+    android:shape="rectangle">
+    <solid android:color="#FFFFFF"/>
 
+
+</shape>

@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clipToOutline="true"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/toArchive"
@@ -39,6 +39,21 @@
                 android:textColor="#003C68"
                 android:textSize="14dp"
                 android:focusable="true" />
+
+            <TextView
+                android:id="@+id/toDeleteArchive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/open_sans_bold"
+                android:padding="8dp"
+                android:text="Удалить"
+                android:textAlignment="viewStart"
+                android:textColor="#003C68"
+                android:textSize="14dp" />
 
         </LinearLayout>
 

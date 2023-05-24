@@ -25,7 +25,7 @@ import com.example.neobis_android_inventory_app.model.Product
 //}
 
 @Database(
-    entities = [Product::class], version = 2
+    entities = [Product::class], version = 3
 )
 @TypeConverters(ImageConverter::class)
 
@@ -44,13 +44,13 @@ abstract class ProductDatabase : RoomDatabase() {
             synchronized(this) {
                 val instance = Room.databaseBuilder(
                     context.applicationContext, ProductDatabase::class.java, "product_database"
-                ).build()
+                )
+                    .build()
                 INSTANCE = instance
                 return instance
             }
         }
     }
 }
-
 
 

@@ -1,17 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ArchiveXml"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.ArchiveFragment">
 
-
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/the_archive"
-
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Архив"
+        android:textColor="#003C68"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="24dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
         />
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="25dp"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="8dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintHorizontal_bias="0.5"
+        >
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:queryHint="Поиск"
+            app:iconifiedByDefault="false"
+            app:queryBackground="@android:color/transparent"
+            />
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerviewArch"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:spanCount="2"
+        tools:listitem="@layout/customer_cards" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

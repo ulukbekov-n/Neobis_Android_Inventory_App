@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView = binding.bottomNav
         navController = findNavController(R.id.fragmentNavController)
         bottomNavigationView.setupWithNavController(navController)
+        supportActionBar?.hide()
         setupActionBarWithNavController(findNavController(R.id.fragmentNavController))
 
 

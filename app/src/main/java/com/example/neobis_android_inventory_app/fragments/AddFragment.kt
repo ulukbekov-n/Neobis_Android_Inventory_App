@@ -84,7 +84,7 @@ class AddFragment : Fragment() {
         val image = selectedImageUri.toString()
 
         if (inputCheck(modelName, cost, companyName, quantity)) {
-            val product = Product(0, modelName, cost, companyName, quantity,image)
+            val product = Product(0, modelName, cost, companyName, quantity,image,false)
             mViewModel.addProduct(product)
 
             Toast.makeText(requireContext(), "Товар добавлен", Toast.LENGTH_LONG).show()

@@ -1,13 +1,12 @@
 package com.example.neobis_android_inventory_app.data
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.neobis_android_inventory_app.model.Product
 import kotlinx.coroutines.Dispatchers
-
 import kotlinx.coroutines.launch
+import java.util.concurrent.Executors
+
 
 
 class ProductViewModel (application: Application):AndroidViewModel(application)

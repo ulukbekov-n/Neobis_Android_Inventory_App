@@ -17,15 +17,14 @@ data class Product(
 
     @PrimaryKey(autoGenerate = true)
     val id: Int,
-//  val image Bitmap
-//  typeConverter
-    //bottom sheet
-    //alert dialog
     val modelName: String,
     val Cost: String,
     val companyName: String,
     val Quantity: String,
-    val image: String
-) : Parcelable
+    val image: String,
+
+    val archived: Boolean
+) : Parcelable {
+}
 
 

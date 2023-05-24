@@ -74,7 +74,7 @@ class UpdateFragment : Fragment() {
         val Image = selectedImageUri.toString()
 
         if (inputCheck(modelName,Cost,companyName, Quantity)){
-            val updatedProduct=Product(args.currentProduct.id, modelName,Cost,companyName,Quantity, Image )
+            val updatedProduct=Product(args.currentProduct.id, modelName,Cost,companyName,Quantity, Image ,false)
 
             mViewModel.updateProduct(updatedProduct)
             Toast.makeText(requireContext(),"Товар Сохранён",Toast.LENGTH_SHORT).show()
